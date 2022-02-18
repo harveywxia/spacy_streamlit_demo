@@ -31,7 +31,10 @@ def get_default_text(nlp):
     # Check if spaCy has built-in example texts for the language
     try:
         examples = importlib.import_module(f".lang.{nlp.lang}.examples", "spacy")
-        return examples.sentences[0]
+        print(examples.sentences[0])
+        print(type(examples.sentences[0]))
+        # return examples.sentences[0]
+        return DEFAULT_TEXT
     except (ModuleNotFoundError, ImportError):
         return ""
 
