@@ -16,6 +16,7 @@ import spacy_streamlit
 from pathlib import Path
 import srsly
 import importlib
+import streamlit as st
 
 TITLE = "自然语言处理"
 MODELS = srsly.read_json(Path(__file__).parent / "models.json")
@@ -97,3 +98,12 @@ spacy_streamlit.visualize(
 #             sidebar_description=DESCRIPTION,
 #             get_default_text=get_default_text
 #         )
+
+FOOTER = """
+<span style="font-size: 1em">&hearts; Built by [`bchren.fun`](https://bchren.fun/en/spacy/)
+</span>"""
+
+st.sidebar.markdown(
+        FOOTER,
+        unsafe_allow_html=True,
+    )
